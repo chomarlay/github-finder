@@ -18,6 +18,7 @@ const GithubState = props => {
     loading: false
   };
 
+  //
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
   // search users
@@ -27,7 +28,7 @@ const GithubState = props => {
       `https://api.github.com/search/users?q=${searechText}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
     dispatch({
-      types: SEARCH_USERS,
+      type: SEARCH_USERS,
       payload: res.data.items
     });
   };
